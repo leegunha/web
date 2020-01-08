@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EX11_form.html </title>
+</head>
+<body>
+<form action = ""method="get">
+ 이름 : <input type = "text" name = "name" id = "name"><br>
+ 비밀번호 : <input type = "password" name = "pwd">  <br>
+ 취미 :
+ 	독서  <input type = "checkbox" name = "hobby" value = "ck1"><br>
+	 음악강상  <input type = "checkbox" name = "hobby" value = "ck2"><br>
+ 	게임  <input type = "checkbox" name = "hobby" value = "ck3"><br>
+ 	등산  <input type = "checkbox" name = "hobby" value = "ck4"><br>
+ 성별 :  <input type = "radio" name = "gender" id = "F">여자<br>
+ <input type = "radio" name = "gender" id = "M">남자<br>
+ 
+ 직업 :  
+ 내용 : 
+ 
+ 
+
+</form>>
+</body>
+</html>

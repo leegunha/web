@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Table tag</title>
+<style type = "text/css">
+	table{
+	border: 2px dotted red;
+	width: 650px;
+	height: 200px;
+	
+	
+	}
+	
+td, tr {border:2px double blue;}
+
+
+</style>
+
+
+
+
+</head>
+<body>
+<!--  <a href = "이동할 페이지 URL "> 화면표시글자</a> -->
+
+동남아시아 국가 연합<a href = "https://ko.wikipedia.org/wiki/%EB%8F%99%EB%82%A8%EC%95%84%EC%8B%9C%EC%95%84_%EA%B5%AD%EA%B0%80_%EC%97%B0%ED%95%A9 ">東南-國家聯合,</a> 영어: Association of Southeast Asian Nations, ASEAN; 아세안)은 
+1967년에 설립된 동남아시아의 정치, 경제, 문화 공동체이다. 매년 11월에 정상회의를 개최한다. 아세안은 현재 거대한
+ 공동체로 거듭 태어나고 있다. 1967년 8월 8일 태국 방콕에서 창설되었다. 이후, 브루나이, 캄보디아, 라오스, 미얀마
+  및 베트남을 회원국으로 포함하고 있다. 아세안은 오는 2015년까지 유럽 연합과 맞먹는 정치·경제 통합체를 지향하고 있다. 또, 사회 문화적 진화 회원국이 평화적으로 차이를 해결하기 위해 지역의 평화와 안정의 보호 및 기회를 제공하고 있다. 아세안은 2008년 12월 15일 지역 공동체의 헌법 구실을 하게 될 역사적인 "아세안 헌장"을 발효시켰다. 
+<table border = "2" width = "650" height = "30">
+<th>제목1</th><th>제목2</th><th>제목3</th>
+<tr>
+<td colspan = "2">1</td><td>3</td></tr>
+<tr>
+<td rowspan = "3">4</td><td>5</td><td>6</td></tr>
+<tr>
+<td>8</td><td>9</td></tr>
+<tr>
+<td>10</td><td>11</td></tr>
+</table>
+</body>
+</html>

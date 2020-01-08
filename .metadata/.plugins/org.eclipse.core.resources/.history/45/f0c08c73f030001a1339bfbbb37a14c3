@@ -1,0 +1,10 @@
+<!DOCTYPE html> <!--  html 주석 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>image tag</title>
+</head>
+<body>
+<img src="C:\Users\student\Desktop\web\web_html_01\WebContent\images\house.gif">
+</body>
+</html>
