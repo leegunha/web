@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="emp">
+	<select id="selectAll" resultType="emp" >
+	SELECT * FROM EMPLOYEES 
+	</select>
+
+	<select id="selectWhere" resultType="emp" >
+	<![CDATA[SELECT * FROM EMPLOYEES where employee_id <= 150]]>
+	</select>
+		
+	<select id="selectOne" resultType="emp" 
+	parameterType="String">
+	select employee_id, last_name, email, hire_date,
+	job_id, department_id
+	from employees
+	where upper(last_name) = #{a}
+	</select>
+	
+	<insert id="insertEmp" parameterType="emp">
+	 insert into employees
+	 (employee_id, last_name, email, hire_date,job_id,
+	 department_id) 
+	 values(#{employee_id}, #{last_name}, #{email}, 
+	 sysdate, #{job_id}, #{department_id})
+	</insert>
+	
+	<!-- 1000번 사번 사원   
+	부서코드:50->80
+	이메일 : do@kitri.com->kyung@korea.com
+	-->
+	<update id="updateEmp" parameterType="emp">
+		update employees
+		set department_id =#{department_id}, 
+		email=#{email}
+		where employee_id =#{employee_id} 
+	</update>
+	
+	<delete id="deleteHistory" parameterType="int">
+		delete job_history where employee_id=#{a}
+	</delete>
+	
+	<delete id="deleteEmp" parameterType="int">
+		delete employees where employee_id=#{a}
+	</delete>	
+	
+	<!-- 
+	create sequence emp_seq;
+	1. select emp_seq.nextval from dual
+	or
+	2. select max(id)+1 from employees
+	
+	insert into employees values(emp_seq.nextval, ) 
+	 -->
+	 
+	<insert id="insertEmpWithSelectKey" 
+	parameterType="emp" >
+	 
+<!-- 	 	select emp_seq.nextval from dual -->
+	 <selectKey keyProperty="employee_id" 
+	 resultType="int" order="BEFORE">
+	 	select max(employee_id)+1 from employees
+	 </selectKey>
+	 
+	 insert into employees
+	 (employee_id, last_name, email, hire_date,job_id,
+	 department_id) 
+	 values( #{employee_id} , #{last_name}, #{email}, 
+	 sysdate, #{job_id}, #{department_id})
+	</insert>
+
+<!-- 
+Map m = new Map();
+m.add("a", "변경");
+m.add("b", 1003);
+m.add("c", 1004);
+ -->	
+	<update id="updateWithMap" 
+	parameterType="java.util.Map">
+	update employees
+	set last_name= #{a}
+	where employee_id=#{b} or employee_id=#{c}
+	</update>
+	
+	<select id="selectWithRownum" parameterType="int[]"
+	resultType="emp">
+	select employee_id, last_name, email, hire_date,
+	job_id, department_id
+	from(select rownum r, imsi.*
+		from(select * from employees order by salary desc) imsi
+		)
+	where r between #{array[0]} and #{array[1]}
+	</select>
+	
+	<select id="selectList" resultType="emp"
+	parameterType="int" >
+	<![CDATA[select * from employees
+	where employee_id <= #{id}]]>
+	</select>
+	
+	<select id="selectWithArray" resultType="emp"
+	parameterType="int[]" >
+	select * from employees
+	where department_id in 
+	<foreach collection="array" item="a"
+	open="(" close=")" separator=",">
+		#{a}
+	</foreach>
+	</select>
+
+	<select id="selectWithList" resultType="emp"
+	parameterType="java.util.List" >
+	select * from employees
+	where department_id in 
+	<foreach collection="list" item="a"
+	open="(" close=")" separator=",">
+		#{a}
+	</foreach>
+	</select>
+		
+<!-- 	<select id="selectWithMap" resultType="emp" 
+	parameterType="java.util.Map">
+	 select * from employees
+	 where 
+	 <if test="column_name == 'first_name'">
+	  first_name = #{column_value}
+	 </if>
+	 <if test="column_name == 'last_name'">
+	  last_name = #{column_value}
+	 </if>	 
+	</select> -->
+
+<!-- 동적 where 절 생성, 컬럼명은 ${}로 표시 -->	
+	<select id="selectWithMap" resultType="emp" 
+	parameterType="java.util.Map">
+	 select * from employees
+	 where 
+		 <foreach collection="column_name" item="a"	 separator="or">
+		 <foreach collection="column_value" item="b"	 separator="or">
+			${a} = #{b}
+		</foreach>
+		</foreach>
+
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+

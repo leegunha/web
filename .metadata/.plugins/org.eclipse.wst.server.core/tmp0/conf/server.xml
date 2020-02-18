@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\student\Desktop\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\student\Desktop\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\web_html_01" path="/web_html_01" reloadable="true" source="org.eclipse.jst.jee.server:web_html_01"/><Context docBase="C:\Users\student\Desktop\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\bb" path="/bb" reloadable="true" source="org.eclipse.jst.jee.server:bb"/></Host>
+      <Context docBase="C:\Users\student\Desktop\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\student\Desktop\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\spring" path="/mvc" reloadable="true" source="org.eclipse.jst.jee.server:spring"/><Context docBase="C:\Users\student\Desktop\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\semiproject" path="/semi" reloadable="true" source="org.eclipse.jst.jee.server:semiproject"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=web_html_01/C:\/Users\/student\/Desktop\/web\/web_html_01\/WebContent\/WEB-INF\/lib\/servlet-api.jar&lt;javax.servlet.http(HttpServlet.class[HttpServlet" modifiers="1057" timestamp="1578380551709"/>
+<typeInfo handle="=mvc2/src&lt;test{Controller.java[Controller" modifiers="513" timestamp="1580778505731"/>
+<typeInfo handle="=spring_pjt_board/src\/main\/java&lt;com.javalec.spring_pjt_board.command{BCommand.java[BCommand" modifiers="513" timestamp="1581324897128"/>
+</typeInfoHistroy>

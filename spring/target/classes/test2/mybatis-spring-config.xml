@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  <!-- mybatis db 연결정보 세팅 파일 -->
+<configuration>
+<!-- 	<properties resource="mybatis/db.properties" /> -->
+	
+	<typeAliases>
+		<typeAlias 
+		type="mybatis.EmpVO" alias="emp" />
+		<typeAlias 
+		type="mybatis.EmpVO2" alias="emp2" />
+	</typeAliases>
+	
+<!-- 	<environments default="mydb">
+		<environment id="mydb">
+		AUTO commit 상태 
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="hr" />
+				<property name="password" value="hr" />
+			</dataSource>	
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="mybatis/emp-mapping.xml" />
+		<mapper resource="mybatis/emp2-mapping.xml" />		
+	</mappers> -->
+</configuration>
